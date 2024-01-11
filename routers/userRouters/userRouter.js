@@ -7,8 +7,9 @@ const auth = require("../../auth/auth");
 const restaurant = require("../../restaurantmodel/restaurantmodel");
 const userEditRouter = require("./userEditRouter");
 const nodemailer = require("nodemailer");
-const generator = require('generate-password');
 const userUploadRouter = require("./userUploadRouter");
+const token = require("../../tokenmodel/tokenmodel");
+const crypto = require("crypto");
 
 router.use("/edit",userEditRouter);
 router.use("/upload",userUploadRouter);
@@ -19,7 +20,7 @@ router.post("/register",async (req,res)=>{
     if(userRegister){// if user already exists
         res.status(409).send("User already exists in database.");
     }else{
-        let hashedPassword=await bcrypt.hash(req.body.Password,10);
+        let hashedPassword = await bcrypt.hash(req.body.Password,10);
 
         const newUser = new user({// create new user
             "Username":req.body.Username,
@@ -67,42 +68,98 @@ router.get("/info",auth,async (req,res)=>{// get request to get all the info
     res.send(userInfo);
 });
 
-router.post("/forgotpassword",auth,async (req,res)=>{// sends mail for authantication // CHANGE IT'S BEHAVIOUR TO SEND A LINK TO THE MAIL
-    const forgotPassword = await user.findByIdAndUpdate(req.decodedToken._id);
+router.post("/forgotpassword",async (req,res)=>{// sends mail for authantication // CHANGE IT'S BEHAVIOUR TO SEND A LINK TO THE MAIL
 
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.GMAIL_MAIL,
-            pass: process.env.GMAIL_APP_PASSWORD
+    const User = await user.findOne({Username:req.body.username});
+
+    if(User){
+        const TOKEN = await token.findOne({userID:User._id});
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.GMAIL_MAIL,
+                pass: process.env.GMAIL_APP_PASSWORD
+            }
+        });
+
+        if(TOKEN){
+            const newnewToken = crypto.randomBytes(32).toString("hex");
+            TOKEN.Token = newnewToken;
+            await TOKEN.save();
+
+            const newLink = `http://localhost:${process.env.SERVER_PORT}/user/forgotpassword/${User._id}/${newnewToken}`
+
+            const mailOptions = {
+                from: process.env.GMAIL_MAIL,
+                to: User.Email,
+                subject: 'ForgotPassword',
+                text: `Link for changing your password: ${newLink}`
+            };
+    
+            transporter.sendMail(mailOptions, function(error, info){
+                if (error) {
+                console.log(error);
+                } else {
+                console.log('Email sent: ' + info.response);
+                }
+            });
+
+            //make a new token and change it with the old one.
+
+        }else{
+            //make a new token
+            const newToken = new token({
+                userID: User._id,
+                Token: crypto.randomBytes(32).toString("hex"),
+                isUsed: false
+            });
+
+            newToken.save();
+
+            const newLink = `http://localhost:${process.env.SERVER_PORT}/user/forgotpassword/${User._id}/${newToken.Token}`
+
+            const mailOptions = {
+                from: process.env.GMAIL_MAIL,
+                to: User.Email,
+                subject: 'ForgotPassword',
+                text: `Link for changing your password: ${newLink}`
+            };
+    
+            transporter.sendMail(mailOptions, function(error, info){
+                if (error) {
+                console.log(error);
+                } else {
+                console.log('Email sent: ' + info.response);
+                }
+            });
         }
-    });
 
-    const generatedPassword = generator.generate({
-    length: 10,
-    numbers: true
-    });
+        res.send("password change link has been sent to your mail.");
+    }else{
+        res.send("User doesn't exist.");
+    }
+});
 
-    const mailOptions = {
-        from: process.env.GMAIL_MAIL,
-        to: forgotPassword.Email,
-        subject: 'Password',
-        text: `Your new password is ${generatedPassword}`
-    };
+router.post("/forgotpassword/:userId/:Token",async (req,res)=>{// sends mail for authantication // CHANGE IT'S BEHAVIOUR TO SEND A LINK TO THE MAIL
+    const existingtoken = await token.findOne({Token:req.params.Token,userID:req.params.userId});
+    
+    if(!existingtoken.isUsed){
+        existingtoken.isUsed = true;
 
-    forgotPassword.Password = await bcrypt.hash(generatedPassword,10);
+        const changepassword = await user.findById(req.params.userId);
 
-    await forgotPassword.save();
+        let hashedPassword=await bcrypt.hash(req.body.newPassword,10);
 
-    transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-      });
+        changepassword.Password = hashedPassword;
 
-      res.send("Mail has been successfully sent.");
+        changepassword.save();
+        existingtoken.save();
+
+        res.send("password has been successfully changed.");
+    }else{
+        res.send("link is invalid or expired.");
+    }
 });
 
 router.delete("/delete",auth,async (req,res)=>{// deletes user
