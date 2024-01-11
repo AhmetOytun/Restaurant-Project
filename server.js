@@ -4,11 +4,10 @@ dotenv.config({path:"./.env.development"});
 const express = require("express");
 const app = express();
 const db = require("./db/db");
-const router = require("./router/router");
+const router = require("./routers/router");
 const bodyParser = require("express").json;
 
-app.use("/css",express.static("./frontend/css"));// setting css folder
-app.use("/js",express.static("./frontend/js"));// setting js folder
+app.use("/images",express.static("./images"))
 
 app.use(bodyParser());// getting requests as json
 

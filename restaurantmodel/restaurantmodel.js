@@ -8,6 +8,7 @@ const restaurantSchema = new schema({
     PriceRange:String,
     Likes:Number,
     Dislikes:Number,
+    RestaurantPictureURL:String,
     LikedBy:[{
         Username:String
     }],
