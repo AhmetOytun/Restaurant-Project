@@ -1,0 +1,1965 @@
+{
+	"info": {
+		"_postman_id": "f1c2243f-5863-4478-987e-b65d3c50bffb",
+		"name": "RestaurantReviewApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31578704"
+	},
+	"item": [
+		{
+			"name": "UserEndpoints",
+			"item": [
+				{
+					"name": "Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/user/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mainpage",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQwMjE0NTEsImV4cCI6MTcwNDAyNTA1MX0.z6PDfXXuENzoSItKMHnwYY162W9iYtrpLigMIGBg3UM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/user/usermainpage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"usermainpage"
+							],
+							"query": [
+								{
+									"key": "X-Auth-Token",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"Username\":\"testuser3\",\n            \"Password\":\"testuser3\",\n            \"Name\":\"Test\",\n            \"Surname\":\"User\",\n            \"Email\":\"testuser@gmail.com\",\n            \"Location\":\"İstanbul\",\n            \"Age\":\"20\",\n            \"Gender\":\"Male\",\n            \"ProfilePicture\":\"https://pm1.aminoapps.com/6525/a6357977029c1fd08039677dfb4312c00083ac85_00.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"Username\":\"testuser1\",\n            \"Password\":\"testuser1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ForgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/forgotpassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"forgotpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ForgotPassword-ChangePassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPassword\":\"testuser2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/forgotpassword/65891c3c4b25a77176ba5304/64784ff2b2a2bd9c377eecab303d00a9039db8bd1c8fcdcfe1e729325e359dec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"forgotpassword",
+								"65891c3c4b25a77176ba5304",
+								"64784ff2b2a2bd9c377eecab303d00a9039db8bd1c8fcdcfe1e729325e359dec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditName",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newName\":\"Bomba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/edit/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"edit",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditSurname",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newSurname\":\"Bomba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/edit/surname",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"edit",
+								"surname"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditEmail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newEmail\":\"Bomba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/edit/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"edit",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditLocation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newLocation\":\"Bomba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/edit/location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"edit",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditAge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newAge\":21\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/edit/age",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"edit",
+								"age"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditGender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newGender\":\"Male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/edit/gender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"edit",
+								"gender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditProfilePicture",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newProfilePicture\":\"hihihaha\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/edit/profilepicture",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"edit",
+								"profilepicture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\":\"oPpCvTuWjD\",\n    \"newPassword\":\"hihihaha\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/edit/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"edit",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg1ZDc1NmUwZmExZTE4OGM4MmM3NzgiLCJpYXQiOjE3MDMzNDk2MjIsImV4cCI6MTcwMzM1MzIyMn0.AeB8j8hNrup5LLlp6iezn0HdNkY83tGVckHB5Slcxqw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/user/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadProfilePicture",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OwnerEndpoints",
+			"item": [
+				{
+					"name": "Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NThkODRkNTA2NTM2ZGI2ZmFmMjBkZTIiLCJpYXQiOjE3MDQxMTAyMzAsImV4cCI6MTcwNDExMzgzMH0.q2aq0NC_gBqAu2cmJ0ySOQz58WCLgztKFXySYs6-bO8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/owner/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"Username\":\"testowner4\",\n            \"Password\":\"testowner4\",\n            \"Name\":\"Test\",\n            \"Surname\":\"Owner\",\n            \"Email\":\"testowner@gmail.com\",\n            \"Location\":\"Istanbul\",\n            \"Age\":\"20\",\n            \"Gender\":\"Male\",\n            \"ProfilePicture\":\"url\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"Username\":\"testowner4\",\n            \"Password\":\"testowner4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditName",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newName\":\"Bomba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/edit/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"edit",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditSurname",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newSurname\":\"Bomba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/edit/surname",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"edit",
+								"surname"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditEmail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newEmail\":\"Bomba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/edit/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"edit",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ForgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/forgotpassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"forgotpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ForgotPassword-ChangePassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPassword\":\"testuser2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/forgotpassword/65891c3c4b25a77176ba5304/64784ff2b2a2bd9c377eecab303d00a9039db8bd1c8fcdcfe1e729325e359dec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"forgotpassword",
+								"65891c3c4b25a77176ba5304",
+								"64784ff2b2a2bd9c377eecab303d00a9039db8bd1c8fcdcfe1e729325e359dec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditLocation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newLocation\":\"Bomba\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/edit/location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"edit",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditAge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newAge\":21\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/edit/age",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"edit",
+								"age"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditGender",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NThkODRkNTA2NTM2ZGI2ZmFmMjBkZTIiLCJpYXQiOjE3MDQxMTAyMzAsImV4cCI6MTcwNDExMzgzMH0.q2aq0NC_gBqAu2cmJ0ySOQz58WCLgztKFXySYs6-bO8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newGender\":\"Male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/edit/gender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"edit",
+								"gender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditProfilePicture",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NThkODRkNTA2NTM2ZGI2ZmFmMjBkZTIiLCJpYXQiOjE3MDQxMTAyMzAsImV4cCI6MTcwNDExMzgzMH0.q2aq0NC_gBqAu2cmJ0ySOQz58WCLgztKFXySYs6-bO8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newProfilePicture\":\"hihihaha\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/edit/profilepicture",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"edit",
+								"profilepicture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDQxMDYzODUsImV4cCI6MTcwNDEwOTk4NX0.3z3LcfGFOPHDBtMtYkweS_8ZIhukYd67eYhmDhpi-4o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\":\"12345678y\"\n    \"newPassword\":\"hihihaha\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/edit/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"edit",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadProfilePicture",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM3ODRiMjVhNzcxNzZiYTUzMGQiLCJpYXQiOjE3MDQ2MjkxNTQsImV4cCI6MTcwNDYzMjc1NH0.jSqqz_rdYSSZXYvz5XOL_Kpqpm2KlZPIimDvQAAW_k4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/ahmetoytunkurtuldu/Downloads/vh2GihSbi6TqWQSyATp5M.webp"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/owner/upload/image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"upload",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "\n",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/owner/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"owner",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RestaurantEndpoints",
+			"item": [
+				{
+					"name": "MenuEndpoints",
+					"item": [
+						{
+							"name": "GetMenu",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"RestaurantID\":\"65891cc54b25a77176ba5321\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/restaurant/menu/get",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"restaurant",
+										"menu",
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateMenu",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Auth-Token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM3ODRiMjVhNzcxNzZiYTUzMGQiLCJpYXQiOjE3MDQ4OTkxNDksImV4cCI6MTcwNDkwMjc0OX0.G1IwP9-4g6TYJrm6xBpflYE4Oo-4yliEuv52VWDDfpI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"CategoryName\":\"Drinks\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/restaurant/menu/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"restaurant",
+										"menu",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddCategory",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Auth-Token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM3ODRiMjVhNzcxNzZiYTUzMGQiLCJpYXQiOjE3MDQ4OTkxNDksImV4cCI6MTcwNDkwMjc0OX0.G1IwP9-4g6TYJrm6xBpflYE4Oo-4yliEuv52VWDDfpI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"CategoryName\":\"Foods\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/restaurant/menu/category/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"restaurant",
+										"menu",
+										"category",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddItem",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Auth-Token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM3ODRiMjVhNzcxNzZiYTUzMGQiLCJpYXQiOjE3MDQ5MTQ0MjcsImV4cCI6MTcwNDkxODAyN30.d3ByYX_IlwzIHIOCiKz5yg0Bz-Yajc60LViUKQLt0oU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"CategoryName\":\"Drinks\",\n    \"ItemName\":\"Long Island\",\n    \"ItemPrice\":\"300\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/restaurant/menu/item/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"restaurant",
+										"menu",
+										"item",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EditPrice",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Auth-Token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM3ODRiMjVhNzcxNzZiYTUzMGQiLCJpYXQiOjE3MDQ5MTQ0MjcsImV4cCI6MTcwNDkxODAyN30.d3ByYX_IlwzIHIOCiKz5yg0Bz-Yajc60LViUKQLt0oU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"CategoryName\":\"Drinks\",\n    \"ItemName\":\"Long Island\",\n    \"newItemPrice\":\"400\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/restaurant/menu/edit/price",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"restaurant",
+										"menu",
+										"edit",
+										"price"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EditName",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Auth-Token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM3ODRiMjVhNzcxNzZiYTUzMGQiLCJpYXQiOjE3MDQ5MTQ0MjcsImV4cCI6MTcwNDkxODAyN30.d3ByYX_IlwzIHIOCiKz5yg0Bz-Yajc60LViUKQLt0oU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"CategoryName\":\"Drinks\",\n    \"ItemName\":\"Long Island\",\n    \"newItemPrice\":\"400\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/restaurant/menu/edit/price",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"restaurant",
+										"menu",
+										"edit",
+										"price"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RemoveItem",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-Auth-Token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM3ODRiMjVhNzcxNzZiYTUzMGQiLCJpYXQiOjE3MDQ5MTQ0MjcsImV4cCI6MTcwNDkxODAyN30.d3ByYX_IlwzIHIOCiKz5yg0Bz-Yajc60LViUKQLt0oU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"CategoryName\":\"Drinks\",\n    \"ItemName\":\"Long Island\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/restaurant/menu/item/remove",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"restaurant",
+										"menu",
+										"item",
+										"remove"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteCategory",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-Auth-Token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM3ODRiMjVhNzcxNzZiYTUzMGQiLCJpYXQiOjE3MDQ4OTkxNDksImV4cCI6MTcwNDkwMjc0OX0.G1IwP9-4g6TYJrm6xBpflYE4Oo-4yliEuv52VWDDfpI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"CategoryName\":\"Drinks\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/restaurant/menu/category/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"restaurant",
+										"menu",
+										"category",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteMenu",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-Auth-Token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM3ODRiMjVhNzcxNzZiYTUzMGQiLCJpYXQiOjE3MDQ4OTkxNDksImV4cCI6MTcwNDkwMjc0OX0.G1IwP9-4g6TYJrm6xBpflYE4Oo-4yliEuv52VWDDfpI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"CategoryName\":\"Drinks\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/restaurant/menu/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"restaurant",
+										"menu",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Restaurants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/restaurant/restaurants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NThkODRkNTA2NTM2ZGI2ZmFmMjBkZTIiLCJpYXQiOjE3MDM3NzM0MDYsImV4cCI6MTcwMzc3NzAwNn0.CvVz9_p4YWX1-7rdpduS2SX5bAQa49dKTdm6zwC_0x0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\":\"muhit\",\n    \"PhoneNumber\":1234567890,\n    \"Location\":\"Istanbul\",\n    \"PriceRange\":\"150-200\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/restaurant/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDM1MDE2NjMsImV4cCI6MTcwMzUwNTI2M30.gUP9MRZ97qrqhBmleJCP0NFscB35VXNgYuixebTC1-g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"RestaurantID\":\"65891cc54b25a77176ba5321\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/restaurant/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dislike",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg3MTc3NGE3MThjMzk1MzFiMjMzOTIiLCJpYXQiOjE3MDMzNTY5MDksImV4cCI6MTcwMzM2MDUwOX0.aPTNiXKvymTxjDuXfJ-Y7D3L1QdmlFPKbUFclYFHidU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"RestaurantID\":\"65871ffeaa5ad2d3c66b6a22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/restaurant/dislike",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"dislike"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditName",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg1ZDE5YzRlODg1ZGM1ZTJkNjM0ZjYiLCJpYXQiOjE3MDMzNTM3MjMsImV4cCI6MTcwMzM1NzMyM30.f34VTTRVhwNtNBz960ofdFd2YAmulnionH2gHWWtC6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newName\":\"newTestName\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/restaurant/edit/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"edit",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditLocation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg1ZDE5YzRlODg1ZGM1ZTJkNjM0ZjYiLCJpYXQiOjE3MDMzNTM3MjMsImV4cCI6MTcwMzM1NzMyM30.f34VTTRVhwNtNBz960ofdFd2YAmulnionH2gHWWtC6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newLocation\":\"newLocation\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/restaurant/edit/location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"edit",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditPriceRange",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg1ZDE5YzRlODg1ZGM1ZTJkNjM0ZjYiLCJpYXQiOjE3MDMzNTM3MjMsImV4cCI6MTcwMzM1NzMyM30.f34VTTRVhwNtNBz960ofdFd2YAmulnionH2gHWWtC6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPriceRange\":\"newPriceRange\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/restaurant/edit/pricerange",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"edit",
+								"pricerange"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditPhoneNumber",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg1ZDE5YzRlODg1ZGM1ZTJkNjM0ZjYiLCJpYXQiOjE3MDMzNTM3MjMsImV4cCI6MTcwMzM1NzMyM30.f34VTTRVhwNtNBz960ofdFd2YAmulnionH2gHWWtC6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPhoneNumber\":1111111111\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/restaurant/edit/phonenumber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"edit",
+								"phonenumber"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddFavourite",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWMzNTRiMjVhNzcxNzZiYTUzMDEiLCJpYXQiOjE3MDM0ODkyODQsImV4cCI6MTcwMzQ5Mjg4NH0.nCflX5Lc_0pRseWx7T6JITU910uE_PazlSv3ASVHEP8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"RestaurantID\":\"65891cd84b25a77176ba5328\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/restaurant/addfavourite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"addfavourite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveFavourite",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg3MTc3NGE3MThjMzk1MzFiMjMzOTIiLCJpYXQiOjE3MDMzNTY5MDksImV4cCI6MTcwMzM2MDUwOX0.aPTNiXKvymTxjDuXfJ-Y7D3L1QdmlFPKbUFclYFHidU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"RestaurantID\":\"65871ffeaa5ad2d3c66b6a22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/restaurant/removefavourite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"removefavourite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadRestaurantPicture",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM3ODRiMjVhNzcxNzZiYTUzMGQiLCJpYXQiOjE3MDQ2MjkxNTQsImV4cCI6MTcwNDYzMjc1NH0.jSqqz_rdYSSZXYvz5XOL_Kpqpm2KlZPIimDvQAAW_k4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/ahmetoytunkurtuldu/Downloads/nightmare.webp"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/restaurant/upload/image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"upload",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg1ZDE5YzRlODg1ZGM1ZTJkNjM0ZjYiLCJpYXQiOjE3MDMzNTM3MjMsImV4cCI6MTcwMzM1NzMyM30.f34VTTRVhwNtNBz960ofdFd2YAmulnionH2gHWWtC6g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/restaurant/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"restaurant",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CommentEndpoints",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM0MDRiMjVhNzcxNzZiYTUzMDciLCJpYXQiOjE3MDM0ODcwMDQsImV4cCI6MTcwMzQ5MDYwNH0.Y29_ndkncd_vla8Uo6zQtih1xAnbxNA2qb7iRK1gAtU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Comment\":\"testcomment3\",\n    \"RestaurantID\":\"65891cc54b25a77176ba5321\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/comment/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"comment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg1ZDc1NmUwZmExZTE4OGM4MmM3NzgiLCJpYXQiOjE3MDMzNDU0MDUsImV4cCI6MTcwMzM0OTAwNX0.K4dwODZitwLuk1q-NumPsQa_T6A9UlzxWwdP_5w8aHU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"RestaurantID\":\"65871ffeaa5ad2d3c66b6a22\",\n    \"newComment\":\"newTestComment\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/comment/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"comment",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LikeComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg5MWM0MDRiMjVhNzcxNzZiYTUzMDciLCJpYXQiOjE3MDM0ODc1NjUsImV4cCI6MTcwMzQ5MTE2NX0.WsRXhEaQtEqM4p-sb_emRBlSvKWEbUIFdPtMk1v7ODw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"CommentID\":\"65892081f0158ca334056c6f\",\n    \"RestaurantID\":\"65891cc54b25a77176ba5321\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/comment/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"comment",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DislikeComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg3MTc3NGE3MThjMzk1MzFiMjMzOTIiLCJpYXQiOjE3MDMzNTY5MDksImV4cCI6MTcwMzM2MDUwOX0.aPTNiXKvymTxjDuXfJ-Y7D3L1QdmlFPKbUFclYFHidU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"RestaurantID\":\"65871ffeaa5ad2d3c66b6a22\",\n    \"CommentID\":\"65892081f0158ca334056c6f\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/comment/dislike",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"comment",
+								"dislike"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg3MTc3NGE3MThjMzk1MzFiMjMzOTIiLCJpYXQiOjE3MDMzNTIxODIsImV4cCI6MTcwMzM1NTc4Mn0.zi48z6-p8z_x91z45i-kIAGmLuTRFd4MZDEmM54I-DI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"RestaurantID\":\"6585d6ede0fa1e188c82c772\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/comment/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"comment",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "X-Auth-Token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg1ZDc1NmUwZmExZTE4OGM4MmM3NzgiLCJpYXQiOjE3MDMzMjc0MzQsImV4cCI6MTcwMzMzMTAzNH0.prqgTw_04UZgPwzM0b6KemlOMFFiSXQLUOvnonSluLg",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
