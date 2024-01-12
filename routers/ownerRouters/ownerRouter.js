@@ -3,11 +3,11 @@ const router = express.Router();
 const ownerEditRouter = require("./ownerEditRouter");
 const ownerUploadRouter = require("./ownerUploadRouter");
 const ownerauth = require("../../auth/ownerauth");
-const owner = require("../../usermodels/ownermodel");
+const owner = require("../../models/usermodels/ownermodel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
-const token = require("../../tokenmodel/tokenmodel");
+const token = require("../../models/tokenmodel/tokenmodel");
 const crypto = require("crypto");
 
 
@@ -87,6 +87,7 @@ router.post("/forgotpassword",async (req,res)=>{// sends mail for authantication
         if(TOKEN){
             const newnewToken = crypto.randomBytes(32).toString("hex");
             TOKEN.Token = newnewToken;
+            TOKEN.isUsed = false;
             await TOKEN.save();
 
             const newLink = `http://localhost:${process.env.SERVER_PORT}/owner/forgotpassword/${User._id}/${newnewToken}`
@@ -145,6 +146,8 @@ router.post("/forgotpassword",async (req,res)=>{// sends mail for authantication
 router.post("/forgotpassword/:userId/:Token",async (req,res)=>{// sends mail for authantication // CHANGE IT'S BEHAVIOUR TO SEND A LINK TO THE MAIL
     const existingtoken = await token.findOne({Token:req.params.Token,userID:req.params.userId});
 
+    console.log(existingtoken);
+    console.log(existingtoken.isUsed);
     if(!existingtoken.isUsed){
         existingtoken.isUsed = true;
         const changepassword = await owner.findById(req.params.userId);

@@ -4,8 +4,8 @@ const restaurantMenuCategoryRouter = require("./restaurantMenuCategoryRouter");
 const restaurantMenuEditRouter = require("./restaurantMenuEditRouter");
 const restaurantMenuItemRouter = require("./restaurantMenuItemRouter");
 const ownerauth = require("../../auth/ownerauth");
-const owner = require("../../usermodels/ownermodel");
-const menu = require("../../menumodel/menumodel");
+const owner = require("../../models/usermodels/ownermodel");
+const menu = require("../../models/menumodel/menumodel");
 
 router.use("/category",restaurantMenuCategoryRouter);
 router.use("/item",restaurantMenuItemRouter);

@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const owner = require("../usermodels/ownermodel");
+const owner = require("../models/usermodels/ownermodel");
 
 module.exports = async function verify(req,res,next){// checking the header for the valid token
     const token = req.header("X-Auth-Token");

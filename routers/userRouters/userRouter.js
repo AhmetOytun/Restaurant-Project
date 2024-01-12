@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const user = require("../../usermodels/usermodel");
+const user = require("../../models/usermodels/usermodel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const auth = require("../../auth/auth");
-const restaurant = require("../../restaurantmodel/restaurantmodel");
+const restaurant = require("../../models/restaurantmodel/restaurantmodel");
 const userEditRouter = require("./userEditRouter");
 const nodemailer = require("nodemailer");
 const userUploadRouter = require("./userUploadRouter");
-const token = require("../../tokenmodel/tokenmodel");
+const token = require("../../models/tokenmodel/tokenmodel");
 const crypto = require("crypto");
 
 router.use("/edit",userEditRouter);
@@ -86,6 +86,7 @@ router.post("/forgotpassword",async (req,res)=>{// sends mail for authantication
         if(TOKEN){
             const newnewToken = crypto.randomBytes(32).toString("hex");
             TOKEN.Token = newnewToken;
+            TOKEN.isUsed = false;
             await TOKEN.save();
 
             const newLink = `http://localhost:${process.env.SERVER_PORT}/user/forgotpassword/${User._id}/${newnewToken}`

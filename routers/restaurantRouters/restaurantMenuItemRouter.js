@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const owner = require("../../usermodels/ownermodel");
-const menu = require("../../menumodel/menumodel");
+const owner = require("../../models/usermodels/ownermodel");
+const menu = require("../../models/menumodel/menumodel");
 const ownerauth = require("../../auth/ownerauth");
 
 router.post("/add",ownerauth,async (req,res)=>{

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const owner = require("../../usermodels/ownermodel");
-const restaurant = require("../../restaurantmodel/restaurantmodel");
+const owner = require("../../models/usermodels/ownermodel");
+const restaurant = require("../../models/restaurantmodel/restaurantmodel");
 const ownerauth = require("../../auth/ownerauth");
 
 router.post("/name",ownerauth,async (req,res)=>{

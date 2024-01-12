@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path")
 const auth = require("../../auth/auth");
-const user = require("../../usermodels/usermodel");
+const user = require("../../models/usermodels/usermodel");
 const storage = multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null, "images")

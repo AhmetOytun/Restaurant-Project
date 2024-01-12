@@ -3,8 +3,8 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path")
 const ownerauth = require("../../auth/ownerauth");
-const owner = require("../../usermodels/ownermodel");
-const restaurant = require("../../restaurantmodel/restaurantmodel");
+const owner = require("../../models/usermodels/ownermodel");
+const restaurant = require("../../models/restaurantmodel/restaurantmodel");
 const storage = multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null, "images")
